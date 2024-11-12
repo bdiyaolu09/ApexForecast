@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+  box-sizing: 0;
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+
+}
+
+.background{
+  background:linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%), url(1.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 175vh;
+}
+
+.navbar{
+  height: 80px;
+  width: 100%;
+  background: rgba(0,0,0,0.4);
+}
+
+.logo{
+  color: gold;
+  font: size 35px;
+  font-family: Arial;
+  padding-left: 30px;
+  float: left;
+  padding-top: 20px; 
+}
+
+.navbar ul{
+  float: right;
+  margin-right: 80px;
+}
+
+.navbar ul li{
+  list-style: none;
+  margin:0 8px;
+  display: inline-block;
+  line-height: 80px;
+}
+
+.navbar ul li a{
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-family:'Roboto', sans-serif;
+}
+
+
+.navbar ul li a:hover{
+  background: gold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.container{
+  background: rgba(0,0,0,0.4);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  flex-wrap: wrap;
+
+
+
+}
+
+.container .Contact_data{
+  background: white;
+  width: 600px;
+  border-radius: 2px;
+  border-top: 4px solid gold;
+  margin: 0 10px;
+  
+}
+
+.container .Contact_data form{
+  padding: 0 1rem;
+}
+
+.container .Contact_data form input,
+textarea{
+  width: 95%;
+  margin: 05px 0 0 10px;
+  padding: 7px 10px;
+  border: 1px solid gold;
+  font-size: 1rem;
+}
+
+.container .Contact_data h2{
+  margin: 1.5rem;
+  border-bottom: 0.2rem solid gold;
+  width: 25%
+}
+
+.container .Contact_data label{
+  display: block;
+  padding-top: 15px;
+  padding-left: 10px;
+}
+
+.container .Contact_data button{
+  margin: 20px 10px;
+  border: none;
+  padding: 10px 20px;
+  background: gold;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+
+}
+
+.container .Contact_data button:hover{
+  background: gold;
+  transition: 0.3s;
+  color: white;
+}
+
+.container .contact_data2{
+  background: white;
+  border-radius: 2px;
+  border-top: 4px solid gold;
+  width: 400px;
+  margin: 0 10px;
+}
+
+.container .contact_data2 ul{
+  list-style: none;
+}
+
+.container .contact_data2 ul li{
+  margin: 1.5rem 1rem;
+}
+
+.container .contact_data2 ul li i{
+  font-size: 1.4rem;
+  color: gold;
+}
+.container .contact_data2 ul li i strong{
+  margin-left: 10px;
+  font-size: 1.2rem;
+}
+.container .contact_data2 ul li i p{
+font-size: 14px;
+margin-left: 35px;
+}
+
+.container .contact_data2 .map iframe{
+  width: 90%;
+  height: 280px;
+  margin: 0 1rem;
+}
+
+@media(max-width: 1037px){
+  .container .contact_data, .contact_data2{
+    width: 80%;
+    margin: 10px 0px;
+  }
+}
+
+.container .contact_data h2{
+  width: 50%;
+
+}
+
+@media(max-width:768px){
+  .container .contact_data2{
+    width: 75%;
+  }
+}
+
+.container .contact_data h2{
+  width: 50%;
+  
+}

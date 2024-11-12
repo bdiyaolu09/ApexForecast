@@ -1,0 +1,13 @@
+// Retrieve the email of the logged-in user
+//$email_query = "SELECT email FROM User WHERE email = '$email'";
+//$email_result = mysqli_query($conn, $email_query);
+//$email_row = mysqli_fetch_assoc($email_result);
+//$email = $email_row['email'];
+
+//if (!$email_result) {
+   // die("Error: " . mysqli_error($conn));
+//}
+
+//echo "Email retrieved: " . $email . "<br>";
+
+// Get the form data (replace with your form input fields)

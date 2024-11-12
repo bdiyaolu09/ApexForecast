@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Time Series Analysis</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <canvas id="chart-turnover" width="800" height="600"></canvas>
+    <canvas id="chart-gross-profit" width="800" height="600"></canvas>
+    <canvas id="chart-operating-profit" width="800" height="600"></canvas>
+    <canvas id="chart-net-profit" width="800" height="600"></canvas>
+    <script>
+      // Define the database connection information
+      const mysql = require('mysql');
+      const connection = mysql.createConnection({
+        host     : 'localhost',
+        user     : 'bdiyaolu',
+        password : '#Mcis#22',
+        database : 'bdiyaolu'
+      });
+
+      // Define the email address for which to perform the analysis
+      const email = 'example@example.com';
+
+      // Retrieve the data from the database
+      const sql = `SELECT year, turnover_rate, gross_profit_margin, operating_profit_margin, net_profit_margin
+                   FROM User_Info
+                   WHERE email = ?`;
+      const values = [email];
+      connection.query(sql, values, (error, results, fields) => {
+        if (error) throw error;
+
+        // Convert the data to a Pandas DataFrame
+        const data = new DataFrame(results.map(row => [row.year, row.turnover_rate, row.gross_profit_margin, row.operating_profit_margin, row.net_profit_margin]), {
+          columns: ['year', 'turnover_rate', 'gross_profit_margin', 'operating_profit_margin', 'net_profit_margin']
+        });
+
+        // Set the index of the DataFrame to the year column
+        data.set_index('year', true);
+
+        // Define the years to predict
+        const years = Array.from({length: 5}, (_, i) => new Date().getFullYear() + i);
+
+        // Define the metrics to analyze
+        const metrics = [
+          { name: 'turnover_rate', canvasId: 'chart-turnover' },
+          { name: 'gross_profit_margin', canvasId: 'chart-gross-profit' },
+          { name: 'operating_profit_margin', canvasId: 'chart-operating-profit' },
+          { name: 'net_profit_margin', canvasId: 'chart-net-profit' }
+        ];
+
+        // Define the colors for the chart lines
+        const colors = [
+          'rgba(255, 99, 132, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)'
+        ];
+
+        // Perform time series analysis for each metric
+        metrics.forEach((metric, i) => {
+          const values = data.get(metric.name).values;
+
+          // Remove null values
+          const nonNullValues = values.filter(value => value !== null);
+
+          // If less than 2 non-null values, skip analysis for this metric
+          if (nonNullValues.length < 2) {
+            console.log(`Not enough data to perform analysis for ${metric.name}`);
+            return;
+          }
+
+                  // Calculate mean and standard deviation
+        const mean = nonNullValues.reduce((a, b) => a + b) / nonNullValues.length;
+        const stdDev = Math.sqrt(nonNullValues.reduce((a, b) => a + (b - mean) ** 2) / (nonNullValues.length - 1));
+
+        // Normalize the data
+        const normalized = nonNullValues.map(value => (value - mean) / stdDev);
+
+        // Fit the model using ARIMA algorithm
+        const arima = new ARIMA(normalized);
+        arima.fit().then(() => {
+          // Predict the next five years
+          const forecast = arima.predict(years.length);
+
+          // Denormalize the predicted values
+          const predicted = forecast.map(value => value * stdDev + mean);
+
+          // Create the chart
+          const chartData = {
+            labels: [...data.index.values, ...years],
+            datasets: [
+              {
+                label: 'Historical',
+                data: values,
+                borderColor: colors[i],
+                backgroundColor: 'rgba(0, 0, 0, 0)'
+              },
+              {
+                label: 'Predicted',
+                data: [...values, ...predicted],
+                borderColor: colors[i],
+                backgroundColor: 'rgba(0, 0, 0, 0.2)'
+              }
+            ]
+          };
+
+          const chartOptions = {
+            title: {
+              display: true,
+              text: metric.name
+            },
+            scales: {
+              xAxes: [{
+                type: 'time',
+                time: {
+                  unit: 'year'
+                }
+              }],
+              yAxes: [{
+                ticks: {
+                  min: 0
+                }
+              }]
+            }
+          };
+
+          const ctx = document.getElementById(metric.canvasId).getContext('2d');
+          new Chart(ctx, {
+            type: 'line',
+            data: chartData,
+            options: chartOptions
+          });
+
+        }).catch(error => {
+          console.error(`Failed to fit ARIMA model for ${metric.name}: ${error}`);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
+<script src="bundle.js"></script>
+
+

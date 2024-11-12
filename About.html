@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About</title>
+  <link rel="stylesheet" href="style5.css">
+</head>
+<body>
+  
+    <div class="background">
+      <nav class="navbar">
+        <h2 class="logo">ApexForecast</h2>
+        <ul>
+          <li><a href="HomePage.php">Home</a></li>
+          <li><a href="About.html">About</a></li>
+          <li><a href="year1_data.php">Data</a></li>
+          <li><a href="profile.php">Profile</a></li>
+          <li class="dropdown-toggle"><a href="#">More</a>
+            <ul class="dropdown-menu">
+              <li><a href="services.php">Services</a></li>
+              <li><a href="Contact.html">Contact</a></li>
+              <li><a href="adminlog.html">Admin</a></li>
+              <li><a href="index.html">Signout</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      
+      <div class="section">
+        <div class="container">
+          <div class="content-section">
+            <div class="title">
+              <h1>About US</h1>
+            </div>
+            <div class="content">
+                 <h3>About Our Web Application</h3>
+                 <p>Our web app uses historical data, growth rates, and industry trends to provide accurate predictions for businesses. We help companies make informed decisions by identifying growth opportunities and predicting market demand. Our algorithms are regularly updated to stay up-to-date with the latest trends, giving businesses a competitive edge and driving growth and success.</p>
+                 <div class="button">
+                  <a href="year1_data.php">Start Analyzing</a>
+                 </div>
+                 
+            </div>
+           
+            
+          </div>
+          <div class ="image-section">
+            <img src="3.jpg">
+          </div>
+        </div>
+        
+
+
+      </div>
+</div>
+  
+</body>
+</html>
+<style>
+  .navbar .dropdown-toggle {
+  position: relative;
+}
+.navbar .dropdown-toggle .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+  background: rgba(0,0,0,0.4);
+  color: white; /* text color */
+  text-align: center; /* center text */
+  padding: 10px; /* add padding */
+  border-radius: 5px; /* rounded corners */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5); /* add shadow */
+}
+
+.navbar .dropdown-toggle:hover .dropdown-menu {
+  display: block;
+}
+.background{
+  background:linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%), url(1.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 150vh;
+}
+
+</style>

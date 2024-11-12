@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+
+}
+
+.background{
+  background:linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%), url(1.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 109vh;
+}
+
+.navbar{
+  height: 80px;
+  width: 100%;
+  background: rgba(0,0,0,0.4);
+}
+
+.logo{
+  color: gold;
+  font: size 35px;
+  font-family: Arial;
+  padding-left: 30px;
+  float: left;
+  padding-top: 20px; 
+}
+
+.navbar ul{
+  float: right;
+  margin-right: 80px;
+}
+
+.navbar ul li{
+  list-style: none;
+  margin:0 8px;
+  display: inline-block;
+  line-height: 80px;
+}
+
+.navbar ul li a{
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-family:'Roboto', sans-serif;
+}
+
+
+.navbar ul li a:hover{
+  background: gold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.background .center{
+  position:absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: sans-serif;
+  user-select:none;
+
+}
+
+.center h1{
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  width: 900px;
+  text-align: center;
+}
+
+.center h2{
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  width: 880px;
+  margin-top:10px;
+  text-align: center;
+}
+
+.center .buttons{
+  margin: 35px 28px;
+ 
+}
+
+.buttons button{
+  height: 50px;
+  width: 150px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(45deg, black, gold);
+  border: 1px solid gold;
+  outline: none;
+  cursor: pointer;
+  border-radius: 25px;
+  transition: .5s ease-in-out;
+  text-align: center;
+  text-decoration:none;
+}
+
+.buttons .btn-1{
+  margin-left: 250px;
+
+}
+.buttons .btn-2{
+  margin-left: 20px;
+}
+
+.buttons button:hover{
+background: gold;
+}
+

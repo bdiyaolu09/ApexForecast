@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'poppins', sans-serif;
+
+}
+.body{
+  background: black;
+}
+.background{
+  background:linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%), url(1.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 150vh;
+}
+
+.navbar{
+  height: 80px;
+  width: 100%;
+  background: rgba(0,0,0,0.4);
+}
+
+.logo{
+  color: gold;
+  font: size 35px;
+  font-family: Arial;
+  padding-left: 30px;
+  float: left;
+  padding-top: 20px; 
+}
+
+.navbar ul{
+  float: right;
+  margin-right: 80px;
+}
+
+.navbar ul li{
+  list-style: none;
+  margin:0 8px;
+  display: inline-block;
+  line-height: 80px;
+}
+
+.navbar ul li a{
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-family:'Roboto', sans-serif;
+}
+
+
+.navbar ul li a:hover{
+  background: gold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.section{
+  width: 100%;
+  min-height: 100%;
+  color: white;
+
+}
+
+.container{
+  width: 80%;
+  display: block;
+  margin: auto;
+  padding-top: 100px;
+  
+}
+
+.content-section{
+  float: left;
+  width: 55%;
+
+}
+
+.image-section{
+  float: right;
+  width: 45%;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+
+
+}
+
+.image-section img{
+  width: 100%;
+  height: auto;
+  float: right;
+  grid-column: 2;
+  
+}
+
+.content-section .title{
+  text-transform: uppercase;
+  font-size: 28px;
+}
+
+.content-section .content h3{
+  margin-top: 20px;
+  color: #5d5d5d;
+  font-size: 21px;
+}
+
+
+
+.content-section .content .button{
+ margin-top: 30px; 
+}
+
+.content-section .content .button a{
+  background-color: gold;
+  padding: 12px 40px;
+  text-decoration: none;
+  color: white;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+
+.content-section .content .button a:hover{
+ background-color: gold;
+ color: white; 
+}
+@media screen and (max-width: 768px){
+  .container{
+    width: 80%;
+    display: block;
+    margin: auto;
+    padding-top: 50px;
+  }
+  .content-section{
+    float: none;
+    width: 100%;
+    display: block;
+    margin: auto;
+  }
+  .image-section{
+    float: center;
+    width: 70%;
+  
+    
+  
+  }
+  .image-section image{
+    width: 100px;
+    height: auto;
+    display: block;
+    margin: auto;
+
+  }
+  
+  .content-section .title{
+    text-align: center;
+    font-size: 19px;
+    
+  }
+  .content-section .content .button{
+    text-align: center;
+
+
+  }
+  .content-section .content .button a{
+    padding: 9px 30px;
+  }
+}
+

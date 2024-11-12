@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+body{
+  font-family: 'poppins';
+  background:linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%), url(1.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 109vh;
+}
+
+a{
+  text-decoration: none;
+
+}
+
+#container{
+  max-width: 430px;
+  margin: 30px auto;
+  padding: 20px;
+  
+}
+
+.form-wrap{
+  background: linear-gradient(to top, rgba(0,0,0,0.8)50%,rgba(0,0,0,0.8)50%);;
+  padding: 15px 25px;
+  color: white;
+  border-top: 4px solid gold;
+  border-radius: .05px;
+}
+
+.form-wrap h1, .form-wrap p{
+text-align: center;
+
+}
+
+.form-wrap .form-group{
+  margin-top: 15px;
+}
+
+.form-wrap .form-group label{
+  display: block;
+  color: gold;
+} 
+
+.form-wrap .form-group input{
+  width: 100%;
+  padding: 10px;
+  border: gold 1px solid;
+  border-radius: 5px;
+  font-family: 'poppins';
+
+}
+
+.form-wrap button{
+  display: block;
+  width:100%;
+  padding:10px;
+  margin-top: 20px;
+  background-color: gold;
+  color: black;
+  cursor: pointer;
+  border: 1px solid gold;
+  font-family: 'poppins';
+  font-size:15px;
+  transition: 3s ease-in-out;
+}
+
+.form-wrap button:hover{
+  background-color: gold;
+  transition: 2s ease-in-out;
+}
+
+.form-wrap .bottom-class{
+  font-size: 13px;
+  margin-top: 20px;
+
+}
+
+footer{
+  text-align: center;
+  margin-top: 10px;
+  color: gold;
+}
+
+footer a{
+  color: gold;
+}
+.submit-button {
+  background-color: gold;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.submit-button:hover {
+  background-color: gold;
+}
+
+.bottom-class {
+  font-size: 14px;
+  color: #777;
+  margin-top: 10px;
+}
